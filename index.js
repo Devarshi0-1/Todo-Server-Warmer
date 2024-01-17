@@ -1,5 +1,8 @@
-// npm install axios
 import axios from 'axios';
+import express from 'express';
+
+const app = express();
+const PORT = 5000;
 
 const base_url = 'https://mern-todo-backend-vercel.vercel.app/api/v1'; // Replace with your actual base URL
 
@@ -44,3 +47,7 @@ const warmServer = () => {
 };
 
 setInterval(warmServer, warmUpInterval);
+
+app.listen(PORT, () => {
+	console.log(`Listening on PORT ${PORT}`);
+});
